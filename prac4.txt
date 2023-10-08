@@ -1,0 +1,129 @@
+1. Display only first three lines.
+
+Code: sed '3q' sed-test
+
+2. Display line numbers from four to seven.
+
+Code:  sed -n '4,7p' sed-test
+
+3. Display only last line.
+
+Code:  sed -n '$p' sed-test
+
+4. Display only line number 8.
+
+Code:  sed -n '8p' sed-test
+
+5. Display lines containing “Onions”.
+
+Code: sed -n '/Onions/p' sed-test
+
+6. Display all lines containing “Diary”.
+
+Code:  sed -n '/Diary/p' sed-test
+
+7. Delete second line.
+
+Code: sed '2d' sed-test
+
+8. Delete lines from seven to ten.
+
+Code: sed '7,10d' sed-test
+
+9. Delete lines containing “Meat”.
+
+Code:  sed -n '/Meat/d' sed-test
+
+10. Display lines start at 3 through the first line matching the string “Meat”.
+
+Code: sed -n '3,/Meat/p' sed-test
+
+
+11. Delete lines start at 4 through the first line matching the string “Fruit”.
+
+Code: sed -n '4,/Fruit/d' sed-test
+
+12. Display lines number at interval of 2 i.e. starting at 1, every other line is output.
+
+Code: cat -n sed-test|sed -n '1~2p'
+
+
+13. Display lines starting at 2 and outputs every third line from there.
+
+Code:  cat -n sed-test|sed -n '2~3p'
+
+
+14. Display lines starting with “S”.
+
+Code:  sed -n '/^S/p' sed-test
+
+
+15. Display lines ends with “n”.
+
+Code:  sed -n '/n$/p' sed-test
+
+
+16. Display lines that are not starting with “C”.
+
+Code:  sed -n '/^C/!p' sed-test
+
+
+17. Display lines that are not ending with “y”.
+
+Code:  sed -n '/[^y]$/p' sed-test
+
+
+18. Display all lines that are not starting with “v” or “V” in second field.
+
+Code:cut -d ":" -f2 sed-test|sed -n '/^[vV]/!p'
+
+
+19. Display all lines that are not ending with “y” in second field.
+
+Code:  cut -d ":" -f2 sed-test|sed -n '/y$/!p' sed-test
+
+20. Delete lines containing nothing.
+
+Code:sed -n '/^$/d' sed-test
+
+21. Delete all lines containing “2” in third field.
+
+Code:  cut -d f4 sed-test|sed '/2/d' sed-test
+
+22. Delete all lines containing “y” in fourth field.
+
+Code:cut -d f5 sed-test|sed '/y/d' sed-test
+
+
+23. Display all lines that do not start with C.
+
+Code:  sed -n '/^S/!p' sed-test
+
+
+24. Display all lines that are not empty.
+
+Code:  sed -n '/^$/!p' sed-test
+
+
+25. Delete any other line that does not contain the string “Fish”.
+
+Code: sed -n '/Fish/!d' sed-test
+
+26. Display lines between the strings “Milk” and “Newspaper”.
+
+Code:  sed -n '/Milk/,/Newspaper/p' sed-test
+
+
+27. Display lines between the string “Sundry” and line number 11.
+
+Code: sed -n '/Sundry/,11p' sed-test
+
+
+28. Replace only first occurrence of “Diary” with “DAIRY” in all lines.
+
+Code:  sed 's/Diary/DIARY/' sed-test
+
+
+29. Replace only first occurrence of “Diary” with “DAIRY” in all lines.
+
+Code: sed 's/3/4/' sed-test
